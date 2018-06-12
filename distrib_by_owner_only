@@ -60,12 +60,12 @@ contract ABEERIDE is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
     
-    //This is just the initial number (1.95 Billion ABEE), 18 decimals.
-    uint256 public totalSupply = 1950000000 * 10**18;
+    //This is just the initial number (1.95 Billion ABEE), no decimals, just integers.
+    uint256 public totalSupply = 1950000000;
 
     function name() public constant returns (string) { return "ABEERIDE"; }
     function symbol() public constant returns (string) { return "ABEE"; }
-    function decimals() public constant returns (uint8) { return 18; }
+    function decimals() public constant returns (uint8) { return 0; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
