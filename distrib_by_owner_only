@@ -105,6 +105,7 @@ contract ABEERIDE is ERC20 {
     return _addr.balance;
     }
 
+//distribute to an array of addresses:
     function distributeABEE(address[] addresses, uint256 _value) onlyOwner canDistr public {
          for (uint i = 0; i < addresses.length; i++) {
              balances[owner] -= _value;
