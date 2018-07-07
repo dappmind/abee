@@ -81,7 +81,15 @@ contract ABEERIDE is ERC20 {
 
     function ABEERIDE() public {
         owner = msg.sender;
+	
         balances[msg.sender] = totalSupply;
+	//or balances[owner] = totalSupply;
+	
+
+    	
+	//emit Transfer event to let explorers know that owner received total supply. 
+	// (This will make the transaction apper in EtherScan.io)
+    	Transfer(0, owner, amount);
     }
 
     modifier onlyOwner { 
