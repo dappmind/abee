@@ -62,6 +62,12 @@ contract ABEERIDE is ERC20 {
     
     //This is just the initial number (3 Billion ABEE), no decimals, just integers.
     uint256 public totalSupply = 3000000000;
+    
+    uint public SaleSupply = 1890000000;//1.89B (63%) tokens available for sale
+    uint public SuperDriverDiscountFund = 330000000;//330M (11%)  tokens set aside for the Super Driver discount fund
+    uint public FutureSuperDrivers = 300000000;//300M tokens (10%) set aside for future Super Drivers not able to participate in the TGE
+    uint public FutureInvestorsAndTeamMemebers = 330000000;//330M tokens set aside for future investors and team members
+    uint public BountyCampaignFund = 150000000;//150M (5%) set aside for bounty campaign participants
 
     function name() public constant returns (string) { return "ABEERIDE"; }
     function symbol() public constant returns (string) { return "ABEE"; }
