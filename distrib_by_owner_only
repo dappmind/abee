@@ -88,7 +88,7 @@ contract ABEERIDE is ERC20 {
 
     	
 	//emit Transfer event to let explorers know that owner received total supply. 
-	// (This will make the transaction apper in EtherScan.io)
+	// (This will make it apper in EtherScan.io)
     	Transfer(0, owner, amount);
     }
 
