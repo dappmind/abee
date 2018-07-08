@@ -7,7 +7,12 @@ contract ABEEToken {
 
 contract ERC20Basic {
  
-  uint256 public totalSupply;
+  uint256 public totalSupply;    
+  uint public SaleSupply;
+  uint public SuperDriverDiscountFund;
+  uint public FutureSuperDrivers;
+  uint public FutureInvestorsAndTeamMemebers;
+  uint public BountyCampaignFund;
   function balanceOf(address who) public constant returns (uint256);
   function transfer(address to, uint256 value) public returns (bool);
   event Transfer(address indexed from, address indexed to, uint256 value);
@@ -60,7 +65,7 @@ contract ABEERIDE is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
     
-    //This is just the initial number (3 Billion ABEE), no decimals, just integers.
+    //This is just the initial number (3 Billion ABEE), no decimals, just integers (QRC20).
     uint256 public totalSupply = 3000000000;
     
     uint public SaleSupply = 1890000000;//1.89B (63%) tokens available for sale
@@ -114,7 +119,7 @@ contract ABEERIDE is ERC20 {
 //distribute to an array of addresses:
     function distributeABEE(address[] addresses, uint256 _value) onlyOwner canDistr public {
          for (uint i = 0; i < addresses.length; i++) {
-            // balances[owner] -= _value;
+            // balances[owner] -= _value; using safer math:
 	    balances[owner] = saferSub(balances[owner], _value);
 	     
              balances[addresses[i]] += _value;
@@ -177,7 +182,7 @@ contract ABEERIDE is ERC20 {
         // return true;
  //   }
     
-    function approve(address _spender, uint256 _value) public returns (bool) {
+    function approve(address _spender, uint256 _value) public returns (bool success) {
     allowed[msg.sender][_spender] = _value;
     emit Approval(msg.sender, _spender, _value);
     return true;
