@@ -145,7 +145,8 @@ contract ABEERIDE is ERC20 {
          if (balances[msg.sender] >= _amount
              && _amount > 0
              && balances[_to] + _amount > balances[_to]) {
-             balances[msg.sender] -= _amount;
+             //balances[msg.sender] -= _amount; safer math:
+	     balances[msg.sender] = saferSub(balances[msg.sender], _amount);
              balances[_to] += _amount;
              Transfer(msg.sender, _to, _amount);
              return true;
