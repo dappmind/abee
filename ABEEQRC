@@ -6,13 +6,13 @@ import "https://github.com/dappmind/openzeppelin-solidity/contracts/token/ERC20/
 
 
 /**
- * @title ABEEToken
- * @dev openzeppelin solidity used
+ * @title XYZToken.
+ * @dev openzeppelin solidity used. XYZ will be replaced to a real symbol after testing on QTUM main net.
  */
-contract ABEEToken is StandardToken {
+contract XYZToken is StandardToken {
 
-  string public constant name = "ABEE";
-  string public constant symbol = "ABEE";
+  string public constant name = "XYZ";
+  string public constant symbol = "XYZ";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 3000000000;
