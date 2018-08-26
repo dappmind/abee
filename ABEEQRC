@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 
-import "https://github.com/dappmind/openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
+import "https://github.com/dappmind/openzeppelin-solidity/contracts/token/ERC20/StandardBurnableToke.sol";
 
 
 
@@ -9,10 +9,10 @@ import "https://github.com/dappmind/openzeppelin-solidity/contracts/token/ERC20/
  * @title XYZToken.
  * @dev openzeppelin solidity used. XYZ will be replaced to a real symbol after testing on QTUM main net.
  */
-contract XYZToken is StandardToken {
+contract XYZToken is StandardBurnableToke {
 
-  string public constant name = "XYZ";
-  string public constant symbol = "XYZ";
+  string public constant name = "ABEE";
+  string public constant symbol = "ABX";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 3000000000;
